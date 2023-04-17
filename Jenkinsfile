@@ -7,7 +7,7 @@ stages {
 stage('dockerbuild') {
   steps {
     script {
-      myImage=docker.build registry+":$BuildNumber"
+      myImage=docker.build registry+":$BUILD_NUMBER"
     }
   }
 }
