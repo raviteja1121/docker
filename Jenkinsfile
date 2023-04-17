@@ -3,7 +3,7 @@ agent any
 environment {
 registry="raviteja1121/apache"
   }
-tools { docker 'docker' }
+tools { Docker 'docker' }
 stages { 
 stage('dockerbuild') {
   steps {
