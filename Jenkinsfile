@@ -1,7 +1,7 @@
 pipeline {
 agent any
 environment {
-registry="raviteja1121/apache"
+registry="docker_first"
   }
 stages { 
 stage('dockerbuild') {
@@ -14,7 +14,7 @@ stage('dockerbuild') {
 stage('dockerpush') {
   steps {
     script {
-      docker.withRegistry('https://registry-1.docker.io/v2/', 'dockerhub') {
+      docker.withRegistry('https://473834275811.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:raviaws') {
         myImage.push()
       }
     }
