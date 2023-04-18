@@ -2,7 +2,6 @@ pipeline {
 agent any
 environment {
 registry="raviteja1121/apache"
-docker_hub=credentials('dockerhub')
   }
 stages { 
 stage('dockerbuild') {
@@ -15,7 +14,7 @@ stage('dockerbuild') {
 stage('dockerpush') {
   steps {
     script {
-      docker.withRegistry("https://hub.docker.com", "docker_hub") {
+      docker.withRegistry("https://hub.docker.com", "dockerhub") {
         myImage.push()
       }
     }
