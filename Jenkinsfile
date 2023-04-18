@@ -14,7 +14,7 @@ stage('dockerbuild') {
 stage('dockerpush') {
   steps {
     script {
-      docker.withRegistry("https://hub.docker.com", "dockerhub") {
+      docker.withRegistry(" ", "dockerhub") {
         myImage.push()
       }
     }
